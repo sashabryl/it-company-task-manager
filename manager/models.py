@@ -5,7 +5,8 @@ from django.db import models
 
 class Worker(AbstractUser):
     position = models.ForeignKey(
-        "Position", on_delete=models.CASCADE, related_name="workers"
+        "Position", on_delete=models.SET_NULL, related_name="workers",
+        null=True, blank=True
     )
 
 
